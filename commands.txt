@@ -22,7 +22,14 @@ gst-launch-1.0 nvarguscamerasrc ! nv3dsink -e
 gst-launch-1.0 nvarguscamerasrc ! nvvidconv ! videoconvert ! nv3dsink -e
 
 
-Set up isaac ros
+git clone git@github.com:CatScanners/find-my-kitten.git
+sudo apt-get install pip
+pip install uv
+cd ./find-my-kitten
+sudo apt-get install tmux
+
+// Set up isaac ros
+
 // FROM https://nvidia-isaac-ros.github.io/v/release-3.1/getting_started/dev_env_setup.html
 sudo systemctl daemon-reload && sudo systemctl restart docker
 
