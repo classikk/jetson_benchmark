@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./display.o 1280 720 3 /tmp/imagepipe
+./display.o 1280 720 2 /tmp/imagepipe
