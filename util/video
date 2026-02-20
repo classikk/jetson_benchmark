@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ./modules/video/
+./compile.sh
+./run.sh
