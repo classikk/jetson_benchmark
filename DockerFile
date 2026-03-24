@@ -1,5 +1,7 @@
-# REMEMBER: docker pull nvidia/cuda:13.0.0-devel-ubuntu22.04
-FROM nvidia/cuda:13.0.0-devel-ubuntu22.04 AS compiler-base-base
+# REMEMBER TO PULL DOCKER IMAGE FIRST TO SAVE TIME
+#FROM nvidia/cuda:13.0.0-devel-ubuntu22.04 AS compiler-base-base
+#FROM nvcr.io/nvidia/l4t-cuda:12.2.12-runtime AS compiler-base-base
+FROM compiler-base-base
 
 FROM compiler-base-base AS compiler-base
 ENV DEBIAN_FRONTEND=noninteractive
