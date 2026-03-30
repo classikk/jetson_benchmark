@@ -30,3 +30,27 @@ and sellecting the following options.
 Correct configiration can be checked by runing ´ls -l /dev/video*´
 it should containing video0.
 This also can be used to check it works. ´nvgstcapture-1.0´
+These also might be helpful to try
+
+´
+gst-launch-1.0 nvarguscamerasrc ! nv3dsink -e
+gst-launch-1.0 nvarguscamerasrc ! nvvidconv ! videoconvert ! nv3dsink -e
+´
+
+To see camera ioctl instructions use:  (camera required)
+´
+sudo apt install v4l-utils
+v4l2-ctl
+v4l2-ctl --list-devices
+v4l2-ctl --list-formats-ext
+´
+
+
+
+On jetson ´nvidia-smi´ is not supported see max frequency by ´sudo jetson_clocks --show´
+
+To see current resource usage use:
+´
+sudo pip3 install -U jetson-stats
+sudo jtop
+´

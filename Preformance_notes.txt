@@ -1,8 +1,0 @@
-Nvidia jetson nano orin
-CPU: 
-    6-core arm Cortex A78AE v8.2 64 bit CPU
-    Max frequency 1.5Ghz  ??? https://www.aetina.com/products-detail.php?i=580
-    Binary to Binary FIFO data transfer rate ~600Mb/s, 1280x720 RGB image average transfer time 4.7ms
-GPU:
-    1024-core Nvidia Ampere architecture GPU with 32 Tensor cores
-    Max frequency 625 MHz ??? https://www.aetina.com/products-detail.php?i=580
