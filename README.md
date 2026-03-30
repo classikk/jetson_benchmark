@@ -19,7 +19,8 @@ util/display
 
 
 The camera code has been previously been tesed with IMX-217
-On jetson it can be configured by runing ´sudo python /opt/nvidia/jetson-io/jetson-io.py´
+On jetson it can be configured by runing 
+´sudo python /opt/nvidia/jetson-io/jetson-io.py´
 and sellecting the following options.
 |                Configure Jetson 24pin CSI Connector                |
 |                 Configure for compatible hardware                  |
@@ -44,7 +45,12 @@ v4l2-ctl
 v4l2-ctl --list-devices
 v4l2-ctl --list-formats-ext
 ´
-
+v4l2-ctl also can be used to record video data
+´
+v4l2-ctl -d /dev/video0 \
+--set-fmt-video=width=1280,height=720,pixelformat=RG10 \
+--stream-mmap  --stream-count=120 --stream-to=video.raw
+´
 
 
 On jetson ´nvidia-smi´ is not supported see max frequency by ´sudo jetson_clocks --show´
