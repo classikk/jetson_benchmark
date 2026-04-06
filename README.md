@@ -3,7 +3,7 @@ The enviroment mimics ROS2 structure with minimal overhead.
 
 
 To get started run `init_docker.sh` to pull docker base image to match your own device.
-If your device is does not have Nvidia gpu setting rename 
+If your device is does not have Nvidia gpu, pull your own docker base image and rename it to compiler-base-base-benchmark.
 
 After pulling the docker image run `develop.sh` to get started.
 Inside docker sh you can try runing two scripts util/video and util/display 
