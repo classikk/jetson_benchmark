@@ -1,4 +1,4 @@
-This enviroment is meant for experiments and trials.
+This enviroment is meant for testing theoretical approaches without the overhead of ROS2.
 The enviroment mimics ROS2 structure with minimal overhead.
 
 
