@@ -11,8 +11,3 @@ DEVICES=""
 [ -e /dev/video1 ] && DEVICES="$DEVICES --device=/dev/video1"
 
 docker run --rm -it $DEVICES --gpus all --volume ./:/src -e DISPLAY=$DISPLAY  -v /tmp/.X11-unix:/tmp/.X11-unix jetson_benchmark:main 
-#docker run --rm --gpus all img:main
-
-# Debug:
-# docker run --rm --gpus all -it --entrypoint sh matrix:main
-#docker build --progress=plain -f DockerFile --target main -t $NAME:main .
