@@ -13,7 +13,7 @@ is_jetson() {
 
 if is_jetson; then
     echo "This device is an NVIDIA Jetson"
-    version="nvcr.io/nvidia/l4t-cuda:12.2.12-runtime"
+    version="nvcr.io/nvidia/l4t-cuda:12.2.12-devel"
     docker pull $version
     docker tag $version compiler-base-base-benchmark:latest
 else
