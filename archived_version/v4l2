@@ -1,6 +1,0 @@
-#v4l2-ctl -d /dev/video0 -csensor_mode=5 --set-ctrl=bypass_mode=0,frame_rate=60000000,exposure=683710,gain=171 
-#v4l2-ctl -d /dev/video0 --set-ctrl=bypass_mode=0,frame_rate=60000000,exposure=2495,gain=13
-#v4l2-ctl -d /dev/video0 --set-ctrl=bypass_mode=0,frame_rate=60000000,exposure=683710,gain=171 -csensor_mode=4 --set-fmt-video=width=1280,height=720,pixelformat=RG10 --stream-mmap  --stream-count=120 --stream-to=video.raw
-#  --set-ctrl=bypass_mode=0,frame_rate=60000000
-#-csensor_mode=5 4 and 5 are fast 0 is slow but works and 1 and 2 doesn't work
-#v4l2-ctl -d /dev/video0 -csensor_mode=4 --set-ctrl=bypass_mode=0,frame_rate=60000000 --set-fmt-video=width=1280,height=720,pixelformat=RG10
