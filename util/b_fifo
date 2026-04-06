@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd ./modules/benchmark/FIFO
+cd ./modules/benchmarks/FIFO
 ./compile.sh
 ./run.sh
