@@ -6,6 +6,17 @@
 #include <iostream>
 #define HANDLE_FILE "cuda_ipc_handle.bin"
 
+
+static inline void check(cudaError_t err, const char* context) {
+    if (err != cudaSuccess) {
+        std::cerr << "CUDA error: " << context << ": "
+            << cudaGetErrorString(err) << std::endl;
+        //std::exit(EXIT_FAILURE);
+    }
+}
+#define CHECK(x) check(x, #x)
+
+
 // Simple kernel to write a value into shared memory
 __global__ void writeValue(int* ptr, int value) {
     *ptr = value;
@@ -57,11 +68,15 @@ void runConsumer() {
 
     // Open shared memory
     int* devPtr;
-    cudaIpcOpenMemHandle((void**)&devPtr, handle, cudaIpcMemLazyEnablePeerAccess);
+    CHECK(cudaIpcOpenMemHandle((void**)&devPtr, handle, cudaIpcMemLazyEnablePeerAccess));
     std::cout << devPtr << "\n";
     // Read the value written by Process A
     readValue<<<1,1>>>(devPtr);
-    cudaDeviceSynchronize();
+    std::cout << devPtr << "\n";
+    CHECK(cudaGetLastError());
+    CHECK(cudaDeviceSynchronize());
+    CHECK(cudaGetLastError());
+    std::cout << devPtr << "\n";
 
     cudaIpcCloseMemHandle(devPtr);
 }
@@ -76,8 +91,7 @@ int main(int argc, char** argv) {
 
     if (strcmp(argv[0], "") == 0) {} // avoid unused warning
     
-    cudaSetDevice(0);
-    cudaFree(0);   // forces creation of primary context
+    CHECK(cudaGetLastError());
 
     if (strcmp(argv[1], "A") == 0) {
         runProducer();
